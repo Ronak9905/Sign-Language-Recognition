@@ -1,0 +1,6 @@
+dataset/
+*.npy
+__pycache__/
+*.pyc
+venv/
+.env
