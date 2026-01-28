@@ -101,6 +101,7 @@ def update_frame(root, label):
         if not is_maximized and not fullscreen:
             is_maximized = True
             fullscreen = True
+            print("Window maximized - Fullscreen mode ON")
     else:
         is_maximized = False
     
@@ -151,14 +152,17 @@ def on_key_press(event):
         fullscreen = not fullscreen
         if fullscreen:
             root.state('zoomed')
+            print("Fullscreen ON")
         else:
             root.state('normal')
             root.geometry("640x480")
+            print("Fullscreen OFF")
     elif key == 'escape':
         if fullscreen:
             fullscreen = False
             root.state('normal')
             root.geometry("640x480")
+            print("Fullscreen OFF")
         else:
             stop_flag = True
             root.quit()
